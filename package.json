@@ -12,12 +12,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/content": "^1.9.0",
     "@nuxt/typescript-runtime": "^2.0.0",
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/apollo": "^4.0.1-rc.4",
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.14.6",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.0.2",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
@@ -34,6 +37,9 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "jest": "^26.5.0",
     "ts-jest": "^26.4.1",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "git+https://github.com/FRSource/vue-jest.git#feat-add-compile-template-options"
+  },
+  "resolutions": {
+    "**/vue-jest": "git+https://github.com/FRSource/vue-jest#feat-add-compile-template-options"
   }
 }
