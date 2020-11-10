@@ -25,19 +25,19 @@
         },
         computed: {
 			text: {
-                get(){
-                    return this.item.data.text
+                get(): string {
+                    return (this as any).item.data.text
                 },
-                set(newVal){
-                    this.EDIT_BLOCK({id: this.item.id, data: {text: newVal}})
+                set(newVal) {
+                    (this as any).EDIT_BLOCK({id: (this as any).item.id, data: {text: newVal}})
                 }
             },
 
         },
 		methods: {
             ...mapMutations(['DEL_BLOCK', 'EDIT_BLOCK']),
-			del (){
-                this.DEL_BLOCK(this.item.id)
+			del () {
+                (this as any).DEL_BLOCK((this as any).item.id)
 			},
 
         },

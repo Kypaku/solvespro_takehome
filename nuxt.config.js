@@ -2,7 +2,8 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
     server: {
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        port: 3006,
     },
     head: {
         titleTemplate: '%s - SolvesPro',
@@ -42,6 +43,23 @@ export default {
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
     ],
+
+    pwa: {
+        workbox: {
+            // workboxURL: 'https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js',
+            workboxURL: 'https://storage.googleapis.com/workbox-cdn/releases/5.1.4/workbox-sw.js',
+            autoRegister: true,
+            // preCaching
+        },
+        manifest: {
+            name: 'SolvesPro - Take home',
+            short_name: 'SolvesPro - take home',
+            theme_color: '#777',
+            background_color: '#000000',
+            display: 'standalone',
+            lang: 'ru'
+        }
+    },
 
     apollo: {
         clientConfigs: {
