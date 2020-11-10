@@ -1,7 +1,8 @@
 <template>
     <div class="block">
-        {{item}}
+        {{item.id}}
         <textarea v-model="text"/>
+        <img v-if="item.type === 'image'" :src="item.data.imgSrc"/>
         <v-btn @click="del">X</v-btn>
     </div>
 </template>

@@ -1,5 +1,5 @@
-import { State as ConstructorState } from '~/store/modules/constructor'
+import { State as EditorState } from '~/store/modules/editor'
 
 export default interface Store {
-    constructor: ConstructorState
+    editor: EditorState
 }

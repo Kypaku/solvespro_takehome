@@ -21,6 +21,7 @@ export default {
     ],
 
     plugins: [
+        { src: '~/plugins/vuex-persist', ssr: false }
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -31,7 +32,8 @@ export default {
         // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
         // https://go.nuxtjs.dev/vuetify
-        '@nuxtjs/vuetify'
+        '@nuxtjs/vuetify',
+        '@nuxtjs/pwa',
     ],
 
     // Modules (https://go.nuxtjs.dev/config-modules)

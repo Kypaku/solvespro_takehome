@@ -1,9 +1,9 @@
-import constructor from './modules/constructor'
+import editor from './modules/editor'
 import getters from './getters'
 
 export default {
     modules: {
-        constructor
+        editor
     },
     getters,
     actions: {

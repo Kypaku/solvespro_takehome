@@ -1,11 +1,11 @@
 
 <template>
-    <div class="constructor">
-        <v-btn @click="add">+</v-btn>
+    <div class="editor">
+        <AddBlock/>
         <div class="blocks">
             <draggable v-model="blocks" group="people" @start="drag=true" @end="drag=false">
                 <transition-group>
-                    <Block v-for="block in blocks" :key="block.id" :item="block"/>
+                    <Block v-for="block in blocks" :key="block.id" :item="block" />
                 </transition-group>
             </draggable>
         </div>
@@ -13,16 +13,17 @@
 </template>
 
 <script lang='ts'>
-	import {mapMutations, mapGetters} from 'vuex'
+    import { mapMutations, mapGetters } from 'vuex'
     import { Vue } from 'vue-property-decorator'
-    import Block from './../components/Blocks/Block.vue'
     import draggable from 'vuedraggable'
+    import Block from './../components/Blocks/Block.vue'
+	import AddBlock from './../components/AddBlock/index.vue'
 
     export default Vue.extend({
         components: {
-            Block,
+        	AddBlock,
+		    Block,
             draggable,
-		
         },
         data () {
             return {
