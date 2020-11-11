@@ -14,10 +14,10 @@
                         <v-btn class="mt-3" @click="formComponent = 'EditText'">Добавить текст</v-btn>
                         <v-btn class="mt-3" @click="formComponent = 'EditImage'">Добавить изображение</v-btn>
                     </v-card-text>
-                    <v-card-actions>
-                        <v-btn text v-if="formComponent && !id" @click="back">Назад</v-btn>
+                    <v-card-actions v-if="formComponent">
+                        <v-btn text v-if="!id" @click="back">Назад</v-btn>
                         <v-spacer />
-                        <v-btn text v-if="formComponent" @click="update">{{ id ? 'Редактировать' : 'Добавить' }}</v-btn>
+                        <v-btn text :disabled="!isValid" @click="update">{{ id ? 'Редактировать' : 'Добавить' }}</v-btn>
                     </v-card-actions>
                 </v-container>
             </v-card>
@@ -49,7 +49,23 @@
             }
         },
         computed: {
-            ...mapGetters(['blocks'])
+            ...mapGetters(['blocks']),
+            isValid () : boolean {
+                if (this.block) {
+                    switch (this.block.type) {
+                        case 'text':
+                            return !!this.block.data.text.length
+
+                        case 'image':
+                            return !!this.block.data.imgSrc.length
+
+                        default:
+                            break
+                    }
+                    return false
+                }
+                return false
+            },
         },
         methods: {
             ...mapMutations(['ADD_BLOCK', 'EDIT_BLOCK']),
