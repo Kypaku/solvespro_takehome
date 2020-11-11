@@ -1,5 +1,5 @@
 <template>
-    <div class="block" :class="{active}">
+    <div v-if="item" class="block" :class="{active}">
         <div class="d-flex block-header mt-2">
             <v-spacer />
             <v-btn fab text x-small @click="del"><v-icon>mdi-close</v-icon></v-btn>
@@ -31,7 +31,7 @@
         },
         data () {
             return {
-                text: this.item.data.text,
+                text: this.item?.data.text,
             }
         },
         computed: {
