@@ -2,16 +2,16 @@
 <template>
     <div class="editor">
         <div class="blocks">
-            <draggable v-model="sortingBlocks" @start="drag=true" @end="drag=false" :animation="200" filter=".disabled">
+            <draggable v-model="sortingBlocks" :animation="200" filter=".disabled" @start="drag=true" @end="drag=false">
                 <transition-group type="transition" :name="!drag ? 'flip-list' : null">
                     <Block
                         v-for="block in blocks"
                         :key="block.id"
                         :item="block"
                         :active="block.id === activeId"
+                        :class="{disabled: block.id !== activeId}"
                         @click.native="activeId = block.id"
                         @touchstart.native="activeId = block.id"
-                        :class="{disabled: block.id !== activeId}"
                     />
                 </transition-group>
             </draggable>
@@ -62,12 +62,12 @@
     </script>
 
 <style lang="scss" scoped>
-	.add-button{
-		position: fixed;
+    .add-button{
+        position: fixed;
         bottom: 50px;
         left: 10px;
         min-width: 36px;
-	}
+    }
     .flip-list-move {
         transition: transform 0.5s;
     }

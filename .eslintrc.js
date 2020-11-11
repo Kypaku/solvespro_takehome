@@ -17,5 +17,6 @@ module.exports = {
         'vue/html-indent': 'off',
         'vue/html-self-closing': 'off',
         'vue/custom-event-name-casing': 'off',
+        'vue/singleline-html-element-content-newline': 'off',
     }
 }

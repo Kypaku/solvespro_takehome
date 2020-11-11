@@ -1,6 +1,6 @@
 <template>
-    <div class="">
-        <EditBlock :id="$route.params.id"/>
+    <div class="edit-page">
+        <EditBlock :id="$route.params.id" />
     </div>
 </template>
 
@@ -11,7 +11,7 @@
         components: {
 
         },
-        data() {
+        data () {
             return {
                 
             }

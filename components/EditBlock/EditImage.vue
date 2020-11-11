@@ -8,7 +8,7 @@
                 <div v-if="loading" class="loading">Loading...</div>
                 <div v-else-if="error" class="error">An error occurred</div>
                 <v-row v-else-if="data" class="result">
-                    <v-col cols="6" v-for="(img, i) in data.movies.map(el => el.poster)" :key="i" class="img-wrap" :class="{active: img === activeImg}">
+                    <v-col cols="6" v-for="img in data.movies.map(el => el.poster)" :key="img" class="img-wrap" :class="{active: img === activeImg}">
                         <img :src="img" @click="selectImg(img)" />
                     </v-col>
                 </v-row>
@@ -30,7 +30,7 @@
         props: {
             item: Object as PropType<Block>,
         },
-        data() {
+        data () {
             return {
                 query: (gql: any) => gql`
                     query{
@@ -47,26 +47,27 @@
         methods: {
             selectImg (img: string) {
                 this.activeImg = img
-                this.$emit('setBlock', { type: 'image', data: { imgSrc: img } })
+                this.setBlock(img)
             },
-
+            setBlock (imgSrc: string) {
+                this.$emit('setBlock', { type: 'image', data: { imgSrc } })
+            }
         },
         created() {
-            this.$emit('setBlock', {type: 'image', data: {imgSrc: ''}})
+            this.setBlock('')
         },
     })
 
     </script>
 
 <style lang="scss" scoped>
-	.img-wrap{
+    .img-wrap{
         padding: 5px;
-		img{
+        img{
             width: 100%
         }
         &.active{
             border: 2px solid lightgray;
         }
-	}
-
+    }
 </style>

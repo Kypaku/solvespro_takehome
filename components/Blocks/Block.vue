@@ -1,15 +1,15 @@
 <template>
     <div class="block" :class="{active}">
         <div class="d-flex block-header mt-2">
-            <v-spacer/>
+            <v-spacer />
             <v-btn fab text x-small @click="del"><v-icon>mdi-close</v-icon></v-btn>
         </div>
-        <img class="image" v-if="item.type === 'image'" :src="item.data.imgSrc" />
+        <img v-if="item.type === 'image'" :src="item.data.imgSrc" class="image" />
         <template v-else>
             <div class="text">{{ item.data.text }}</div>
         </template>
         <div class="d-flex block-footer mb-2">
-            <v-spacer/>
+            <v-spacer />
             <v-btn fab x-small @click="$router.push('/editor/edit/' + item.id)"><v-icon>mdi-pencil</v-icon></v-btn>
         </div>
     </div>
@@ -37,20 +37,19 @@
         computed: {
 
         },
-		methods: {
+        methods: {
             ...mapMutations(['DEL_BLOCK', 'EDIT_BLOCK']),
-			del () {
+            del () {
                 this.DEL_BLOCK(this.item.id)
-			},
-
+            },
         },
     })
 
     </script>
 
 <style lang="scss" scoped>
-	.block{
-		padding: 0px 10px;
+    .block{
+        padding: 0px 10px;
         border: 1px solid transparent;
         &.active{
             border-color: lightgray;
@@ -64,9 +63,9 @@
         &.sortable-ghost{
             opacity: 0;
         }
-	}
-	.image{
-		width: 100%;
-	}
+    }
+    .image{
+        width: 100%;
+    }
 
 </style>

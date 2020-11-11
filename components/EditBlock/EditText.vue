@@ -1,6 +1,6 @@
 <template>
     <div class="add-text">
-        <v-textarea v-model="text" solo @input="$emit('setBlock', {type: 'text', data: {text}})" />
+        <v-textarea v-model="text" solo @input="setBlock(text)" />
     </div>
 </template>
 
@@ -25,19 +25,20 @@
 
         },
         methods: {
-
+            setBlock (text: string) {
+                this.$emit('setBlock', { type: 'text', data: { text } })
+            }
         },
         created() {
-            !this.item && this.$emit('setBlock', { type: 'text', data: { text: this.text } })
+            !this.item && this.setBlock(this.text)
         },
     })
-
-    </script>
+</script>
 
 <style lang="scss" scoped>
-	.add-text{
+    .add-text{
         textarea{
-		    width: 100%;
+           width: 100%;
         }
-	}
+    }
 </style>

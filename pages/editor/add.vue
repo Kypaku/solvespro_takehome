@@ -11,7 +11,7 @@
         components: {
 
         },
-        data() {
+        data () {
             return {
                 
             }

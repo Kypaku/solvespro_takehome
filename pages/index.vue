@@ -1,6 +1,6 @@
 <template>
     <v-row justify="center" align="center">
-        <div v-if="blocks.length">
+        <div v-show="blocks.length">
             <nuxt-link to="/editor">Ваш шаблон</nuxt-link>
         </div>
         <div class="mt-3">
