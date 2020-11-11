@@ -7,16 +7,17 @@ export interface State {
 
 export default {
     state: {
-        blocks: [], // Load from ls
+        blocks: [],
     } as State,
     mutations: {
+        CLEAR_BLOCKS: (state: State) => {
+            state.blocks = []
+        },
         ADD_BLOCK: (state: State, block: Block) => {
             state.blocks.push({ ...block, id: uuid() })
-            // ls
         },
         DEL_BLOCK: (state: State, id: string) => {
             state.blocks = state.blocks.filter(block => block.id !== id)
-            // ls
         },
         EDIT_BLOCK: (state: State, { id, data }: {id: string, data: BlockText | BlockImg}) => {
             const block = state.blocks.find(block => block.id === id)

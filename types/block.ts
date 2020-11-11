@@ -1,7 +1,7 @@
 export default interface Block {
     id: string
     type: string
-    data: BlockText | BlockImg
+    data: BlockText & BlockImg
 }
 
 export interface BlockText {

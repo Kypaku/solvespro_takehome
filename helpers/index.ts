@@ -10,3 +10,7 @@ export function orderItemsById (arrayObjects: Array<any>, arrayIds: string[]) {
     }
     return arrayItems
 }
+
+export function capitalizeFirstLetter ([first, ...rest]: string) {
+    return [first.toLocaleUpperCase(), ...rest].join('')
+}

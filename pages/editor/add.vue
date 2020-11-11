@@ -1,6 +1,6 @@
 <template>
-    <div class="add-text">
-        <textarea v-model="text"/>
+    <div class="add-page">
+        <EditBlock />
     </div>
 </template>
 
@@ -13,7 +13,7 @@
         },
         data() {
             return {
-                text: ''
+                
             }
         },
         computed: {
@@ -21,9 +21,6 @@
         },
         methods: {
 
-        },
-        created() {
-            this.$emit('setBlock', {type: 'text', data: {text: this.text}})
         },
     })
 

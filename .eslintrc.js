@@ -15,5 +15,7 @@ module.exports = {
         'indent': "off",
         'comma-dangle': 'off',
         'vue/html-indent': 'off',
+        'vue/html-self-closing': 'off',
+        'vue/custom-event-name-casing': 'off',
     }
 }
