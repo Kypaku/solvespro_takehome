@@ -2,7 +2,14 @@
 <template>
     <div class="editor">
         <div class="blocks">
-            <draggable v-model="sortingBlocks" :animation="200" filter=".disabled" @start="drag=true" @end="drag=false">
+            <draggable
+                v-model="sortingBlocks"
+                :animation="200"
+                filter=".disabled"
+                handle=".handle"
+                @start="drag=true"
+                @end="drag=false"
+            >
                 <transition-group type="transition" :name="!drag ? 'flip-list' : null">
                     <Block
                         v-for="block in blocks"

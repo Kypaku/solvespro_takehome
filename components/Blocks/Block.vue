@@ -1,6 +1,9 @@
 <template>
     <div v-if="item" class="block" :class="{active}">
         <div class="d-flex block-header mt-2">
+            <div class="handle">
+                <v-icon>mdi-arrow-all</v-icon>
+            </div>
             <v-spacer />
             <v-btn fab text x-small @click="del"><v-icon>mdi-close</v-icon></v-btn>
         </div>
