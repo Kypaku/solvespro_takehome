@@ -1,15 +1,17 @@
 <template>
-    <v-row justify="center" align="center">
-        <div v-show="blocks.length">
-            <nuxt-link to="/editor">Ваш шаблон</nuxt-link>
-        </div>
-        <div class="mt-3">
-            <div class="label">Создайте новый уникальный шаблон из блоков:</div>
-            <div class="d-flex justify-center mt-3">
-                <v-btn @click="createNewPage">Добавить блок</v-btn>
+    <div class="front-page">
+        <div class="content">
+            <div class="mt-3" justify="center">
+                <div class="label text-center">Создайте новый уникальный <br />шаблон из блоков:</div>
+                <div class="d-flex justify-center mt-7">
+                    <v-btn color="primary" x-large @click="createNewPage" class="add-block">Добавить блок</v-btn>
+                </div>
             </div>
+            <v-row v-show="blocks.length" justify="center" class="mt-8">
+                <nuxt-link to="/editor">Ваш шаблон</nuxt-link>
+            </v-row>
         </div>
-    </v-row>
+    </div>
 </template>
 
 <script lang='ts'>
@@ -37,3 +39,18 @@
         },
     })
 </script>
+
+<style lang="scss" scoped>
+    .add-block{
+        text-transform: none;
+    }
+    .front-page{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .label{
+        text-align: center;
+    }
+</style>

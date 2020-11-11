@@ -1,10 +1,10 @@
 <template>
     <v-app light>
-        <v-app-bar fixed app>
+        <v-app-bar fixed app class="header">
             <div class="logo" @click="$router.push('/')">App logo</div>
         </v-app-bar>
         <v-main>
-            <v-container>
+            <v-container class="main-container">
                 <nuxt />
             </v-container>
         </v-main>
@@ -27,8 +27,15 @@
 <style lang="scss">
     .logo{
         cursor: pointer;
-        font-size: 22px;
+        font-size: 20px;
+        color: #333;
         user-select: none;
         -webkit-user-select: none;
+    }
+    .main-container{
+        height: 100%;
+    }
+    .header{
+        box-shadow: none !important;
     }
 </style>

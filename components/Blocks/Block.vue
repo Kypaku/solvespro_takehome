@@ -1,5 +1,5 @@
 <template>
-    <div v-if="item" class="block" :class="{active}">
+    <div v-if="item" class="block mb-3" :class="{active}">
         <div class="d-flex block-header mt-2">
             <div class="handle">
                 <v-icon>mdi-arrow-all</v-icon>
@@ -53,9 +53,9 @@
 <style lang="scss" scoped>
     .block{
         padding: 0px 10px;
-        border: 1px solid transparent;
+        border: 1px solid lightgray;
         &.active{
-            border-color: lightgray;
+            border-color: gray;
             .block-header, .block-footer{
                 visibility: visible;
             }
