@@ -38,7 +38,7 @@
                             poster
                         }
                     }`,
-                activeImg: this.item?.data.imgSrc,
+                activeImg: this.item ? this.item.data.imgSrc : '',
             }
         },
         computed: {
@@ -54,7 +54,7 @@
             }
         },
         created () {
-            this.setBlock('')
+            !this.item && this.setBlock(this.activeImg)
         },
     })
 
