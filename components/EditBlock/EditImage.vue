@@ -53,7 +53,7 @@
                 this.$emit('setBlock', { type: 'image', data: { imgSrc } })
             }
         },
-        created() {
+        created () {
             this.setBlock('')
         },
     })

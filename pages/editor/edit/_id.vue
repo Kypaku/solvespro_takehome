@@ -22,7 +22,7 @@
         methods: {
 
         },
-        created() {
+        created () {
 
         },
     })

@@ -71,7 +71,7 @@
                 this.formComponent = ''
             }
         },
-        created() {
+        created () {
             if (this.id) {
                 this.block = this.blocks.find((block: Block) => block.id === this.id)
                 if (this.block) {

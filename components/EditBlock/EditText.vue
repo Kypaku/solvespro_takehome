@@ -29,7 +29,7 @@
                 this.$emit('setBlock', { type: 'text', data: { text } })
             }
         },
-        created() {
+        created () {
             !this.item && this.setBlock(this.text)
         },
     })
