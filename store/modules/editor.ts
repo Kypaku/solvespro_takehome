@@ -6,10 +6,11 @@ export interface State {
 }
 
 export default {
-    state: {
-        blocks: [],
-    } as State,
-
+    state (): State {
+        return {
+            blocks: [],
+        }
+    },
     mutations: {
         CLEAR_BLOCKS: (state: State) => {
             state.blocks = []
